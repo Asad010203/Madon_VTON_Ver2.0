@@ -1,0 +1,179 @@
+================================================================
+IDM-VTON on Modal.com — Quick Reference
+Location: D:\madon\IDM-VTON\
+================================================================
+
+All commands run in PowerShell (not Command Prompt).
+Right-click in PowerShell to paste.
+
+
+================================================================
+0. ONE-TIME SETUP (only needed on a fresh machine / new folder)
+================================================================
+
+    cd "D:\madon\IDM-VTON"
+    py -3.10 -m venv .venv
+    .\.venv\Scripts\python.exe -m pip install --upgrade pip
+    .\.venv\Scripts\python.exe -m pip install modal Pillow
+
+Verify install worked:
+
+    .\.venv\Scripts\python.exe -c "import modal; from preprocess_images import prepare_pair; print('OK')"
+
+Should print: OK
+
+Verify Modal is authenticated:
+
+    .\.venv\Scripts\python.exe -m modal token show
+
+Should show your token for account 'abdullahsaleem75911'.
+If it doesn't, run:  .\.venv\Scripts\python.exe -m modal setup
+
+
+================================================================
+1. BUILD / DEPLOY THE CONTAINER (upload code to Modal)
+================================================================
+
+Only needed the first time OR whenever you edit modal_idm_inference.py.
+
+    cd "D:\madon\IDM-VTON"
+    $env:PYTHONIOENCODING = "utf-8"
+    .\.venv\Scripts\python.exe -m modal deploy modal_idm_inference.py
+
+Timing:
+  * First deploy (fresh image): 10-15 minutes (torch + detectron2 build)
+  * Code-only redeploy (cached): 5-30 seconds
+  * pip-only change (cached torch): 1-2 minutes
+
+Success looks like:
+    Created objects.
+    Created function run_idm.
+    App deployed in Xs
+    View Deployment: https://modal.com/apps/abdullahsaleem75911/main/deployed/idm-vton
+
+If it hangs or errors, see IDM_VTON_SESSION_NOTES.md.
+
+
+================================================================
+2. RUN A TEST (do this every session)
+================================================================
+
+    cd "D:\madon\IDM-VTON"
+    $env:PYTHONIOENCODING = "utf-8"
+    .\.venv\Scripts\python.exe test_idm.py
+
+What happens:
+  1. File picker opens - choose PERSON image
+  2. File picker opens - choose GARMENT image
+  3. Button dialog - choose Upper Body / Lower Body / Dress
+  4. Script normalizes both to 768x1024, sends to Modal
+  5. Cold start: 90-120 sec first call (loading SDXL on L4)
+     Warm calls:  40-50 sec after that
+  6. Result opens automatically as: outputs\vton_idm_TIMESTAMP.png
+
+Cost per inference: ~$0.10 (L4 at $0.80/hr)
+
+
+================================================================
+3. VERIFY CONTAINER STATUS (what's running, what it costs)
+================================================================
+
+See what apps are deployed:
+
+    .\.venv\Scripts\python.exe -m modal app list
+
+See running containers (only running = costing money):
+
+    .\.venv\Scripts\python.exe -m modal container list
+
+See recent function calls / logs:
+
+    .\.venv\Scripts\python.exe -m modal app logs idm-vton
+
+Check billing dashboard in browser:
+    https://modal.com/settings/abdullahsaleem75911/usage
+
+Check volume usage (weights storage):
+    https://modal.com/storage/abdullahsaleem75911/main/idm-vton-weights
+    https://modal.com/storage/abdullahsaleem75911/main/leffa-weights
+
+
+================================================================
+4. STOP CONTAINERS / HALT BILLING
+================================================================
+
+Containers auto-stop after ~5 min of no requests. To force-stop right now:
+
+Option A - Stop specific app (kills its containers but keeps app deployed):
+
+    .\.venv\Scripts\python.exe -m modal app stop idm-vton
+
+Option B - Stop a specific container:
+
+    .\.venv\Scripts\python.exe -m modal container list
+    .\.venv\Scripts\python.exe -m modal container stop <CONTAINER_ID>
+
+After stopping:
+  * App is still deployed - you can run test_idm.py again without redeploying
+  * No compute charges accrue while stopped
+  * Only volume storage keeps costing ~$1.20/month for both volumes
+
+
+================================================================
+5. DESTROY / DELETE (nuclear option — only when done permanently)
+================================================================
+
+Delete the app (undeploy — you'd have to redeploy to use again):
+
+    .\.venv\Scripts\python.exe -m modal app stop idm-vton
+    .\.venv\Scripts\python.exe -m modal app delete idm-vton
+
+Delete the weight volumes (WARNING: will need to re-download 28+34 GB):
+
+    .\.venv\Scripts\python.exe -m modal volume delete idm-vton-weights
+    .\.venv\Scripts\python.exe -m modal volume delete leffa-weights
+
+DO NOT delete volumes unless you're sure - re-downloading takes ~10 min
+and costs a little. Volumes only cost ~$1.20/month combined to keep.
+
+
+================================================================
+6. TROUBLESHOOTING
+================================================================
+
+Error: "The term '.\.venv\Scripts\python.exe' is not recognized"
+    You're not in D:\madon\IDM-VTON folder. Run:  cd "D:\madon\IDM-VTON"
+
+Error: "charmap codec can't encode"
+    You forgot to set encoding. Run:  $env:PYTHONIOENCODING = "utf-8"
+
+Error: "No module named 'modal'"
+    Setup didn't complete. Re-run Section 0.
+
+Error: "external shut-down" during deploy
+    Transient Modal infra issue. Just retry the deploy command.
+
+Function errors (SIGSEGV, import errors, etc.):
+    Read IDM_VTON_SESSION_NOTES.md - every known error and fix is documented.
+
+Slow test_idm.py (>2 min):
+    First call cold-starts the container - normal.
+    If every call is slow, container is stopping between calls. That's fine.
+
+Modal dashboard for everything:
+    https://modal.com/apps/abdullahsaleem75911
+
+
+================================================================
+7. TYPICAL WORKFLOW (what you actually do day-to-day)
+================================================================
+
+Session start:
+    cd "D:\madon\IDM-VTON"
+    $env:PYTHONIOENCODING = "utf-8"
+    .\.venv\Scripts\python.exe test_idm.py       # Just run the test, that's it
+
+Session end (optional - saves ~5 min of idle billing):
+    .\.venv\Scripts\python.exe -m modal app stop idm-vton
+
+That's all. Everything else stays as-is between sessions.
