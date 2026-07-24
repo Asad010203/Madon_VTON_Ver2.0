@@ -1,0 +1,228 @@
+✓ Initialized. View run at 
+https://modal.com/apps/fitcheckml/main/ap-PgFp7YVCYqjTGmOcBzfJ33
+✓ Created objects.
+├── 🔨 Created mount D:\modal.com 
+│   env\IDM-VTON\fine-tuning\modal_train_lora_official.py
+└── 🔨 Created function train.
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+================================================================================
+IDM-VTON LoRA Training (Official Forward Pass)
+================================================================================
+Epochs: 30  |  Batch: 1  |  LR: 0.0001
+LoRA rank: 16  |  alpha: 32
+
+[1/4] Loading base components...
+The config attributes {'decay': 0.9999, 'inv_gamma': 1.0, 'min_decay': 0.0, 'optimization_step': 37000, 'power': 0.6666666666666666, 'update_after_step': 0, 'use_ema_warmup': False} were passed to UNet2DConditionModel, but are not expected and will be ignored. Please verify your config.json configuration file.
+Some weights of the model checkpoint were not used when initializing UNet2DConditionModel:
+ ['add_embedding.linear_1.bias, add_embedding.linear_1.weight, add_embedding.linear_2.bias, add_embedding.linear_2.weight']
+  Loaded in 42.1s
+
+[2/4] Injecting LoRA on cross-attention...
+  Trainable: 23,388,160 / 3,014,626,628 (0.776%)
+
+[3/4] Loading dataset...
+  16 usable triplets (1 skipped for missing files)
+
+[4/4] Training...
+
+  epoch 1/30  step 5/16  loss=0.0440
+  epoch 1/30  step 10/16  loss=0.0204
+  epoch 1/30  step 15/16  loss=0.0549
+  epoch 1/30  step 16/16  loss=0.0163
+  → epoch 1 done in 28.0s  avg_loss=0.0307
+
+  epoch 2/30  step 5/16  loss=0.0014
+  epoch 2/30  step 10/16  loss=0.0175
+  epoch 2/30  step 15/16  loss=0.0446
+  epoch 2/30  step 16/16  loss=0.0052
+  → epoch 2 done in 25.3s  avg_loss=0.0139
+
+  epoch 3/30  step 5/16  loss=0.0100
+  epoch 3/30  step 10/16  loss=0.0080
+  epoch 3/30  step 15/16  loss=0.0311
+  epoch 3/30  step 16/16  loss=0.0510
+  → epoch 3 done in 25.4s  avg_loss=0.0170
+
+  epoch 4/30  step 5/16  loss=0.0002
+  epoch 4/30  step 10/16  loss=0.0005
+  epoch 4/30  step 15/16  loss=0.0000
+  epoch 4/30  step 16/16  loss=0.0505
+  → epoch 4 done in 26.1s  avg_loss=0.0161
+
+  epoch 5/30  step 5/16  loss=0.0005
+  epoch 5/30  step 10/16  loss=0.0552
+  epoch 5/30  step 15/16  loss=0.0007
+  epoch 5/30  step 16/16  loss=0.0129
+  → epoch 5 done in 26.6s  avg_loss=0.0201
+
+  epoch 6/30  step 5/16  loss=0.0580
+  epoch 6/30  step 10/16  loss=0.0539
+  epoch 6/30  step 15/16  loss=0.0536
+  epoch 6/30  step 16/16  loss=0.0397
+  → epoch 6 done in 26.3s  avg_loss=0.0217
+
+  epoch 7/30  step 5/16  loss=0.0006
+  epoch 7/30  step 10/16  loss=0.0244
+  epoch 7/30  step 15/16  loss=0.0170
+  epoch 7/30  step 16/16  loss=0.0120
+  → epoch 7 done in 25.0s  avg_loss=0.0159
+
+  epoch 8/30  step 5/16  loss=0.0063
+  epoch 8/30  step 10/16  loss=0.0045
+  epoch 8/30  step 15/16  loss=0.0545
+  epoch 8/30  step 16/16  loss=0.0677
+  → epoch 8 done in 24.8s  avg_loss=0.0301
+
+  epoch 9/30  step 5/16  loss=0.0018
+  epoch 9/30  step 10/16  loss=0.0002
+  epoch 9/30  step 15/16  loss=0.0496
+  epoch 9/30  step 16/16  loss=0.0632
+  → epoch 9 done in 24.9s  avg_loss=0.0294
+
+  epoch 10/30  step 5/16  loss=0.0414
+  epoch 10/30  step 10/16  loss=0.0055
+  epoch 10/30  step 15/16  loss=0.0000
+  epoch 10/30  step 16/16  loss=0.0095
+  → epoch 10 done in 24.8s  avg_loss=0.0176
+
+  💾 Saved: idmvton_lora_official_20260724_164142_e10.pt  (1128 LoRA tensors)
+
+  epoch 11/30  step 5/16  loss=0.0001
+  epoch 11/30  step 10/16  loss=0.0293
+  epoch 11/30  step 15/16  loss=0.0014
+  epoch 11/30  step 16/16  loss=0.0015
+  → epoch 11 done in 25.1s  avg_loss=0.0173
+
+  epoch 12/30  step 5/16  loss=0.0004
+  epoch 12/30  step 10/16  loss=0.0019
+  epoch 12/30  step 15/16  loss=0.0419
+  epoch 12/30  step 16/16  loss=0.0010
+  → epoch 12 done in 24.9s  avg_loss=0.0121
+
+  epoch 13/30  step 5/16  loss=0.0429
+  epoch 13/30  step 10/16  loss=0.0085
+  epoch 13/30  step 15/16  loss=0.0286
+  epoch 13/30  step 16/16  loss=0.0019
+  → epoch 13 done in 24.8s  avg_loss=0.0216
+
+  epoch 14/30  step 5/16  loss=0.0394
+  epoch 14/30  step 10/16  loss=0.0023
+  epoch 14/30  step 15/16  loss=0.0199
+  epoch 14/30  step 16/16  loss=0.0016
+  → epoch 14 done in 25.6s  avg_loss=0.0248
+
+  epoch 15/30  step 5/16  loss=0.0008
+  epoch 15/30  step 10/16  loss=0.0005
+  epoch 15/30  step 15/16  loss=0.0138
+  epoch 15/30  step 16/16  loss=0.0000
+  → epoch 15 done in 25.2s  avg_loss=0.0751
+
+  epoch 16/30  step 5/16  loss=0.0017
+  epoch 16/30  step 10/16  loss=0.0573
+  epoch 16/30  step 15/16  loss=0.0371
+  epoch 16/30  step 16/16  loss=0.0021
+  → epoch 16 done in 24.9s  avg_loss=0.0178
+
+  epoch 17/30  step 5/16  loss=0.0192
+  epoch 17/30  step 10/16  loss=0.0299
+  epoch 17/30  step 15/16  loss=0.0312
+  epoch 17/30  step 16/16  loss=0.0078
+  → epoch 17 done in 25.2s  avg_loss=0.0822
+
+  epoch 18/30  step 5/16  loss=0.0305
+  epoch 18/30  step 10/16  loss=0.0045
+  epoch 18/30  step 15/16  loss=0.0303
+  epoch 18/30  step 16/16  loss=0.0004
+  → epoch 18 done in 25.1s  avg_loss=0.0156
+
+  epoch 19/30  step 5/16  loss=0.0438
+  epoch 19/30  step 10/16  loss=0.0422
+  epoch 19/30  step 15/16  loss=0.0214
+  epoch 19/30  step 16/16  loss=0.0073
+  → epoch 19 done in 24.9s  avg_loss=0.0132
+
+  epoch 20/30  step 5/16  loss=0.0377
+  epoch 20/30  step 10/16  loss=0.0616
+  epoch 20/30  step 15/16  loss=0.0062
+  epoch 20/30  step 16/16  loss=0.0000
+  → epoch 20 done in 25.1s  avg_loss=0.0190
+
+  💾 Saved: idmvton_lora_official_20260724_164142_e20.pt  (1128 LoRA tensors)
+
+  epoch 21/30  step 5/16  loss=0.0487
+  epoch 21/30  step 10/16  loss=0.0001
+  epoch 21/30  step 15/16  loss=0.0046
+  epoch 21/30  step 16/16  loss=0.0521
+  → epoch 21 done in 25.0s  avg_loss=0.0155
+
+  epoch 22/30  step 5/16  loss=0.0369
+  epoch 22/30  step 10/16  loss=0.0060
+  epoch 22/30  step 15/16  loss=0.0509
+  epoch 22/30  step 16/16  loss=0.0523
+  → epoch 22 done in 25.3s  avg_loss=0.0265
+
+  epoch 23/30  step 5/16  loss=0.0000
+  epoch 23/30  step 10/16  loss=0.0009
+  epoch 23/30  step 15/16  loss=0.0007
+  epoch 23/30  step 16/16  loss=0.0001
+  → epoch 23 done in 25.2s  avg_loss=0.0098
+
+  epoch 24/30  step 5/16  loss=0.0119
+  epoch 24/30  step 10/16  loss=0.0047
+  epoch 24/30  step 15/16  loss=0.0000
+  epoch 24/30  step 16/16  loss=0.0499
+  → epoch 24 done in 25.1s  avg_loss=0.0166
+
+  epoch 25/30  step 5/16  loss=0.0401
+  epoch 25/30  step 10/16  loss=0.0145
+  epoch 25/30  step 15/16  loss=0.0195
+  epoch 25/30  step 16/16  loss=0.0001
+  → epoch 25 done in 25.4s  avg_loss=0.0225
+
+  epoch 26/30  step 5/16  loss=0.0134
+  epoch 26/30  step 10/16  loss=0.0082
+  epoch 26/30  step 15/16  loss=0.0040
+  epoch 26/30  step 16/16  loss=0.0383
+  → epoch 26 done in 25.5s  avg_loss=0.0148
+
+  epoch 27/30  step 5/16  loss=0.0065
+  epoch 27/30  step 10/16  loss=0.0574
+  epoch 27/30  step 15/16  loss=0.0077
+  epoch 27/30  step 16/16  loss=0.0001
+  → epoch 27 done in 25.6s  avg_loss=0.0251
+
+  epoch 28/30  step 5/16  loss=0.0356
+  epoch 28/30  step 10/16  loss=0.0054
+  epoch 28/30  step 15/16  loss=0.0439
+  epoch 28/30  step 16/16  loss=0.0586
+  → epoch 28 done in 25.3s  avg_loss=0.0192
+
+  epoch 29/30  step 5/16  loss=0.0471
+  epoch 29/30  step 10/16  loss=0.0241
+  epoch 29/30  step 15/16  loss=0.0363
+  epoch 29/30  step 16/16  loss=0.0464
+  → epoch 29 done in 24.9s  avg_loss=0.0181
+
+  epoch 30/30  step 5/16  loss=0.0001
+  epoch 30/30  step 10/16  loss=0.0340
+  epoch 30/30  step 15/16  loss=0.0459
+  epoch 30/30  step 16/16  loss=0.0529
+  → epoch 30 done in 24.7s  avg_loss=0.0280
+
+  💾 Saved: idmvton_lora_official_20260724_164142_e30.pt  (1128 LoRA tensors)
+
+================================================================================
+✅ Training complete. Best loss: 0.0176
+Final checkpoint: /checkpoints/idmvton_lora_official_20260724_164142_e30.pt
+================================================================================
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/fitcheckml/main/ap-PgFp7YVCYqjTGmOcBzfJ33

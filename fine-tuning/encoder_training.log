@@ -1,0 +1,55 @@
+✓ Initialized. View run at 
+https://modal.com/apps/fitcheckml/main/ap-X70HOt9I2jNRtaG83P0OZp
+✓ Created objects.
+├── 🔨 Created mount D:\modal.com 
+│   env\IDM-VTON\fine-tuning\modal_train_lora_encoder.py
+└── 🔨 Created function train_encoder_lora.
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+================================================================================
+IDM-VTON Encoder-UNet LoRA Training (Garment Branch)
+================================================================================
+Epochs: 30  |  Batch: 1  |  LR: 0.0001
+LoRA rank: 16  |  alpha: 32
+
+[1/4] Loading base components (frozen)...
+Some weights of the model checkpoint were not used when initializing UNet2DConditionModel:
+ ['add_embedding.linear_1.bias, add_embedding.linear_1.weight, add_embedding.linear_2.bias, add_embedding.linear_2.weight']
+  Loaded in 14.0s
+
+[2/4] Injecting LoRA on cross-attention (to_q/k/v/out.0)...
+  Trainable: 23,224,320 / 2,585,442,564 (0.898%)
+
+[3/4] Loading dataset...
+  17 triplets → training on 17 garment images
+
+[4/4] Training...
+
+/root/modal_train_lora_encoder.py:212: UserWarning: Using a target size (torch.Size([1, 4, 128, 96])) that is different to the input size (torch.Size([1, 640, 128, 96])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  loss = F.mse_loss(model_pred.float(), noise.float())
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+  File "/root/modal_train_lora_encoder.py", line 212, in train_encoder_lora
+    loss = F.mse_loss(model_pred.float(), noise.float())
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/functional.py", line 3884, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/usr/local/lib/python3.10/site-packages/torch/functional.py", line 76, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (640) must match the size of tensor b (4) at non-singleton dimension 1
+
+Stopping app - uncaught exception raised in remote container: RuntimeError('The size of tensor a (640) must match the size of tensor b (4) at non-singleton dimension 1').
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ The size of tensor a (640) must match the size of tensor b (4) at           │
+│ non-singleton dimension 1                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘

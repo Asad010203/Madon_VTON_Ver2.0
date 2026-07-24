@@ -1,0 +1,85 @@
+MIXED REPLAY DATASET REPORT (50/50 Training)
+================================================================================
+
+DATASET COMPOSITION:
+--------------------------------------------------------------------------------
+Total triplets: 190
+  Train: 152 (80.0%)
+    Shorts: 76 (50.0%)
+    Base:   76 (50.0%)
+  Val:   38 (20.0%)
+    Shorts: 19 (50.0%)
+    Base:   19 (50.0%)
+
+TRAINING STRATEGY:
+--------------------------------------------------------------------------------
+During each training step:
+  1. Sample 50% shorts triplets (learn new shorts classification)
+  2. Sample 50% base triplets (replay base model knowledge)
+  3. Forward pass through LoRA-fine-tuned model
+  4. Compute loss: alpha * shorts_loss + (1-alpha) * base_loss
+     (alpha=0.5 for balanced learning)
+  5. Backprop through LoRA layers only (base model frozen)
+
+EXPECTED OUTCOMES:
+--------------------------------------------------------------------------------
+1. Shorts classification accuracy: +20-30% (new capability)
+2. Shirts/pants/dresses performance: Maintained (replay prevents forgetting)
+3. Model weights: +5-10% change in LoRA adapters (safety threshold)
+4. No catastrophic forgetting due to 50/50 mixed training
+
+BATCH SAMPLING EXAMPLE (batch_size=4):
+--------------------------------------------------------------------------------
+Batch 1: [shorts_0, shorts_1, base_0, base_1]     (2 shorts, 2 base)
+Batch 2: [base_2, base_3, shorts_2, shorts_3]     (2 shorts, 2 base)
+Batch 3: [shorts_4, base_4, shorts_5, base_5]     (2 shorts, 2 base)
+...
+
+GARMENT TYPE DISTRIBUTION (training set):
+--------------------------------------------------------------------------------
+full_body      :  24 total (shorts: 0, base: 24)
+lower_body     : 103 total (shorts: 76, base: 27)
+upper_body     :  25 total (shorts: 0, base: 25)
+
+SAMPLE TRIPLETS (first 5 from training set):
+--------------------------------------------------------------------------------
+
+Triplet 1 (SHORTS):
+  SKU: MS2617
+  Garment type: lower_body
+  Person: MS2535-00S-BRN/1_ad268097-462b-4b30-a9db-0a409d3e4a4f.webp
+  Garment: MS2617-00S-SND/9_6.webp
+  Target: MS2617-00S-SND/MS2617-SND.webp
+  Dataset source: shorts
+
+Triplet 2 (SHORTS):
+  SKU: MS2607
+  Garment type: lower_body
+  Person: MS2617-00S-SND/MS2617-SND.webp
+  Garment: MS2607-w30-NVY/1_4687f616-fbb3-4992-9acc-5944cbf9cb5e.webp
+  Target: MS2607-w30-NVY/3rdArticles10_0006_2N0A7562.webp
+  Dataset source: shorts
+
+Triplet 3 (SHORTS):
+  SKU: MS2610
+  Garment type: lower_body
+  Person: MS2628-w30-BLK/1_4b5d8215-8d51-49c2-b652-020825846b17.webp
+  Garment: MS2610-w30-BLU/1_70f3c58d-4469-4aef-9bd1-49436f46bd0d.webp
+  Target: MS2610-w30-BLU/MS2610-BLU.webp
+  Dataset source: shorts
+
+Triplet 4 (SHORTS):
+  SKU: MS2610
+  Garment type: lower_body
+  Person: MS2618-00S-SLG/MS2618-SLG.webp
+  Garment: MS2610-w30-BLU/1_70f3c58d-4469-4aef-9bd1-49436f46bd0d.webp
+  Target: MS2610-w30-BLU/MS2610-BLU.webp
+  Dataset source: shorts
+
+Triplet 5 (SHORTS):
+  SKU: MS2541
+  Garment type: lower_body
+  Person: MS2601-00M-LGY/6_990f445c-daee-4874-936d-ea24aefc24c9.webp
+  Garment: MS2541-00S-SKY/2_4c84aee8-6ddc-4160-b2f0-3d26228f35ac.webp
+  Target: MS2541-00S-SKY/3_75696503-6f2e-447f-bf2a-f8ff69f9bdbd.webp
+  Dataset source: shorts

@@ -1,0 +1,73 @@
+SHORTS TRIPLET DATASET REPORT
+================================================================================
+
+Total triplets: 95
+Train split (80%): 76
+Validation split (20%): 19
+Garment type: lower_body
+Strategy: Cross-outfit (shuffled persons × fixed garments)
+
+DATASET BREAKDOWN:
+--------------------------------------------------------------------------------
+SKU MS2529: 5 triplets
+SKU MS2530: 5 triplets
+SKU MS2532: 5 triplets
+SKU MS2535: 5 triplets
+SKU MS2537: 5 triplets
+SKU MS2538: 5 triplets
+SKU MS2541: 5 triplets
+SKU MS2542: 5 triplets
+SKU MS2601: 5 triplets
+SKU MS2603: 5 triplets
+SKU MS2605: 5 triplets
+SKU MS2607: 5 triplets
+SKU MS2610: 5 triplets
+SKU MS2613: 5 triplets
+SKU MS2617: 5 triplets
+SKU MS2618: 5 triplets
+SKU MS2624: 5 triplets
+SKU MS2627: 5 triplets
+SKU MS2628: 5 triplets
+
+SAMPLE TRIPLETS (first 5 from train):
+--------------------------------------------------------------------------------
+
+Triplet 1:
+  SKU: MS2617
+  Source person (from): MS2535-00S-BRN
+  Person: MS2535-00S-BRN/1_ad268097-462b-4b30-a9db-0a409d3e4a4f.webp
+  Garment: MS2617-00S-SND/9_6.webp
+  Target (expected output): MS2617-00S-SND/MS2617-SND.webp
+  Mask: ../masks/MS2617-00S-SND.png
+
+Triplet 2:
+  SKU: MS2607
+  Source person (from): MS2617-00S-SND
+  Person: MS2617-00S-SND/MS2617-SND.webp
+  Garment: MS2607-w30-NVY/1_4687f616-fbb3-4992-9acc-5944cbf9cb5e.webp
+  Target (expected output): MS2607-w30-NVY/3rdArticles10_0006_2N0A7562.webp
+  Mask: ../masks/MS2607-w30-NVY.png
+
+Triplet 3:
+  SKU: MS2610
+  Source person (from): MS2628-w30-BLK
+  Person: MS2628-w30-BLK/1_4b5d8215-8d51-49c2-b652-020825846b17.webp
+  Garment: MS2610-w30-BLU/1_70f3c58d-4469-4aef-9bd1-49436f46bd0d.webp
+  Target (expected output): MS2610-w30-BLU/MS2610-BLU.webp
+  Mask: ../masks/MS2610-w30-BLU.png
+
+Triplet 4:
+  SKU: MS2610
+  Source person (from): MS2618-00S-SLG
+  Person: MS2618-00S-SLG/MS2618-SLG.webp
+  Garment: MS2610-w30-BLU/1_70f3c58d-4469-4aef-9bd1-49436f46bd0d.webp
+  Target (expected output): MS2610-w30-BLU/MS2610-BLU.webp
+  Mask: ../masks/MS2610-w30-BLU.png
+
+Triplet 5:
+  SKU: MS2541
+  Source person (from): MS2601-00M-LGY
+  Person: MS2601-00M-LGY/6_990f445c-daee-4874-936d-ea24aefc24c9.webp
+  Garment: MS2541-00S-SKY/2_4c84aee8-6ddc-4160-b2f0-3d26228f35ac.webp
+  Target (expected output): MS2541-00S-SKY/3_75696503-6f2e-447f-bf2a-f8ff69f9bdbd.webp
+  Mask: ../masks/MS2541-00S-SKY.png

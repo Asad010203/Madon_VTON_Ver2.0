@@ -1,0 +1,55 @@
+BASE TRIPLET DATASET REPORT (50/50 Replay Training)
+================================================================================
+
+Total base triplets: 95
+Train split (80%): 76
+Validation split (20%): 19
+Garment types: upper_body, lower_body, full_body
+Strategy: Cross-outfit base model replay (prevent catastrophic forgetting)
+
+PURPOSE:
+--------------------------------------------------------------------------------
+During training, mix base_triplets (50%) + shorts_triplets (50%) in each batch.
+This ensures the model:
+  1. Learns to classify/fit SHORTS correctly
+  2. Maintains existing knowledge for SHIRTS/PANTS/DRESSES
+  3. Avoids catastrophic forgetting (overfitting to shorts only)
+
+DATASET BREAKDOWN:
+--------------------------------------------------------------------------------
+Garment type 'full_body': 31 triplets
+Garment type 'lower_body': 32 triplets
+Garment type 'upper_body': 32 triplets
+
+SAMPLE TRIPLETS (first 3 from train):
+--------------------------------------------------------------------------------
+
+Base Triplet 1:
+  SKU: MS2538
+  Garment type: lower_body
+  Source person (from): MS2610-w30-BLU
+  Person: MS2610-w30-BLU/MS2610-BLU.webp
+  Garment: base_data/pant/pant_synthetic_70.webp
+  Target (expected output): MS2538-w30-BLU/2_00bc7b67-5acf-4ff0-8e59-f49b5635c0ce.webp
+  Mask: ../masks/MS2538-w30-BLU.png
+  Is synthetic: True
+
+Base Triplet 2:
+  SKU: MS2610
+  Garment type: full_body
+  Source person (from): MS2537-w30-SKB
+  Person: MS2537-w30-SKB/2_6e231cd3-c28a-4d6c-8a23-c77e90d0ee77.webp
+  Garment: base_data/dress/dress_synthetic_59.webp
+  Target (expected output): MS2610-w30-BLU/MS2610-BLU.webp
+  Mask: ../masks/MS2610-w30-BLU.png
+  Is synthetic: True
+
+Base Triplet 3:
+  SKU: MS2613
+  Garment type: lower_body
+  Source person (from): MS2605-w30-BLK
+  Person: MS2605-w30-BLK/1_cdfb020d-6564-41a5-803b-1bd7079608c7.webp
+  Garment: base_data/pant/pant_synthetic_61.webp
+  Target (expected output): MS2613-w30-BLU/1_5593e732-cdf8-4d1b-9cad-e17ff3519905.webp
+  Mask: ../masks/MS2613-w30-BLU.png
+  Is synthetic: True

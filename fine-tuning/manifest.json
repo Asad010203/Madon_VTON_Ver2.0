@@ -1,0 +1,173 @@
+{
+  "MS2529-w30-LBU": {
+    "sku": "MS2529",
+    "person": "MS2529-W30-LBL1.webp",
+    "person_confidence": 0.95,
+    "garment": "4_3b80c46e-b19c-46d6-8a62-8752ed7423be.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2530-w30-GEY": {
+    "sku": "MS2530",
+    "person": "4_663b777d-030c-498e-a1ff-128bad21ad07.webp",
+    "person_confidence": 0.95,
+    "garment": "2_f76ffc02-add6-475f-af24-7d24c452333b.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2532-w28-BLK": {
+    "sku": "MS2532",
+    "person": "6_81fe208c-a179-4d5a-b26e-682087688d0b.webp",
+    "person_confidence": 0.95,
+    "garment": "3_1af303b3-e177-4b4e-91d8-e1ef18a51796.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2535-00S-BRN": {
+    "sku": "MS2535",
+    "person": "1_ad268097-462b-4b30-a9db-0a409d3e4a4f.webp",
+    "person_confidence": 0.95,
+    "garment": "1_7011e9e2-9a52-411d-a040-5c1ab486af72.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2537-w30-SKB": {
+    "sku": "MS2537",
+    "person": "2_6e231cd3-c28a-4d6c-8a23-c77e90d0ee77.webp",
+    "person_confidence": 0.95,
+    "garment": "1_2d26f639-a9a3-489c-a1ce-c3faa3c313ea.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2538-w30-BLU": {
+    "sku": "MS2538",
+    "person": "2_00bc7b67-5acf-4ff0-8e59-f49b5635c0ce.webp",
+    "person_confidence": 0.95,
+    "garment": "1_efa1f384-a5d4-4d97-93df-57987d2eba3d.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2541-00S-SKY": {
+    "sku": "MS2541",
+    "person": "3_75696503-6f2e-447f-bf2a-f8ff69f9bdbd.webp",
+    "person_confidence": 0.95,
+    "garment": "2_4c84aee8-6ddc-4160-b2f0-3d26228f35ac.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2542-00M-BEI": {
+    "sku": "MS2542",
+    "person": "4_5e3bb6c1-dd6d-474c-bd70-6b29f02f6ceb.webp",
+    "person_confidence": 0.95,
+    "garment": "2_0a32e5d0-37f7-4edf-ad03-04afd930f945.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2601-00M-LGY": {
+    "sku": "MS2601",
+    "person": "6_990f445c-daee-4874-936d-ea24aefc24c9.webp",
+    "person_confidence": 0.95,
+    "garment": "1_a86a9138-44dd-47b3-8b6e-9c7fdedf2ac8.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2603-w30-BLK": {
+    "sku": "MS2603",
+    "person": "1_13627819-b47c-4166-9c27-5bbab66132f3.webp",
+    "person_confidence": 0.95,
+    "garment": "mdf-25111-a_1.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2605-w30-BLK": {
+    "sku": "MS2605",
+    "person": "1_cdfb020d-6564-41a5-803b-1bd7079608c7.webp",
+    "person_confidence": 0.95,
+    "garment": "2N0A0930copy.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2607-w30-NVY": {
+    "sku": "MS2607",
+    "person": "3rdArticles10_0006_2N0A7562.webp",
+    "person_confidence": 0.95,
+    "garment": "1_4687f616-fbb3-4992-9acc-5944cbf9cb5e.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2610-w30-BLU": {
+    "sku": "MS2610",
+    "person": "MS2610-BLU.webp",
+    "person_confidence": 0.95,
+    "garment": "1_70f3c58d-4469-4aef-9bd1-49436f46bd0d.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2613-w30-BLU": {
+    "sku": "MS2613",
+    "person": "1_5593e732-cdf8-4d1b-9cad-e17ff3519905.webp",
+    "person_confidence": 0.95,
+    "garment": "2N0A5523copy.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2617-00S-SND": {
+    "sku": "MS2617",
+    "person": "MS2617-SND.webp",
+    "person_confidence": 0.95,
+    "garment": "9_6.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2618-00S-SLG": {
+    "sku": "MS2618",
+    "person": "MS2618-SLG.webp",
+    "person_confidence": 0.95,
+    "garment": "5_ac4fb2f6-7b22-4dc2-8693-9c7c3acf010f.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2624-BEI": {
+    "sku": "MS2624",
+    "person": "1_919d361d-b9eb-4f5f-8a0f-cf0f784f17c2.webp",
+    "person_confidence": 0.95,
+    "garment": "2N0A1584copy.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2627-w30-BLU": {
+    "sku": "MS2627",
+    "person": "1_4a348b5a-2f5d-4162-b43b-61ccef3aa35b.webp",
+    "person_confidence": 0.95,
+    "garment": "2N0A0590.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  },
+  "MS2628-w30-BLK": {
+    "sku": "MS2628",
+    "person": "1_4b5d8215-8d51-49c2-b652-020825846b17.webp",
+    "person_confidence": 0.95,
+    "garment": "2N0A0802.webp",
+    "garment_confidence": 0.95,
+    "num_persons_detected": 1,
+    "num_garments_detected": 1
+  }
+}

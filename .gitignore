@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.claude/
+outputs/
+
+# Local checkpoints — real ones live on Modal volume `idm-vton-checkpoints`
+fine-tuning/checkpoints/*.pt

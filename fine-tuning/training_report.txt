@@ -1,0 +1,24 @@
+LORA FINE-TUNING TRAINING REPORT
+================================================================================
+
+Timestamp: 2026-07-24T19:05:56.830503
+Epochs: 3
+Batch size: 4
+Learning rate: 0.0002
+Weight decay: 0.02
+EMA decay: 0.9999
+
+TRAINING LOSSES:
+--------------------------------------------------------------------------------
+Epoch 1: 0.0005
+Epoch 2: 0.0005
+Epoch 3: 0.0005
+
+VALIDATION LOSSES:
+--------------------------------------------------------------------------------
+Epoch 1: 1.0015
+Epoch 2: 1.0014
+Epoch 3: 1.0013
+
+Best validation loss: 1.0013
+Checkpoints saved to: D:\modal.com env\IDM-VTON\fine-tuning\checkpoints

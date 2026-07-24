@@ -1,0 +1,85 @@
+✓ Initialized. View run at 
+https://modal.com/apps/fitcheckml/main/ap-2MzLcYH5WisDT1ftQEjd3a
+✓ Created objects.
+├── 🔨 Created mount D:\modal.com 
+│   env\IDM-VTON\fine-tuning\modal_train_lora_real.py
+└── 🔨 Created function train_lora.
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:441: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/transformers/utils/generic.py:309: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  _torch_pytree._register_pytree_node(
+/usr/local/lib/python3.10/site-packages/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+================================================================================
+IDM-VTON Real LoRA Training
+================================================================================
+Epochs: 20  |  Batch: 1  |  LR: 0.0001
+LoRA rank: 16  |  alpha: 32
+
+[1/5] Loading base IDM-VTON components (frozen)...
+The config attributes {'decay': 0.9999, 'inv_gamma': 1.0, 'min_decay': 0.0, 'optimization_step': 37000, 'power': 0.6666666666666666, 'update_after_step': 0, 'use_ema_warmup': False} were passed to UNet2DConditionModel, but are not expected and will be ignored. Please verify your config.json configuration file.
+Some weights of the model checkpoint were not used when initializing UNet2DConditionModel:
+ ['add_embedding.linear_1.bias, add_embedding.linear_1.weight, add_embedding.linear_2.bias, add_embedding.linear_2.weight']
+/usr/local/lib/python3.10/site-packages/diffusers/utils/outputs.py:63: FutureWarning: `torch.utils._pytree._register_pytree_node` is deprecated. Please use `torch.utils._pytree.register_pytree_node` instead.
+  torch.utils._pytree._register_pytree_node(
+  Disabled ip_image_proj for training (base config unaffected at inference)
+  Loaded in 51.7s
+
+[2/5] Injecting LoRA adapters into UNet cross-attention...
+  Trainable LoRA params: 23,388,160 / 3,014,626,628 (0.776%)
+
+[3/5] Loading dataset...
+  17 triplets
+
+[4/5] Setting up optimizer...
+
+[5/5] Training...
+
+Traceback (most recent call last):
+  File "/pkg/modal/_runtime/container_io_manager.py", line 894, in handle_input_exception
+    yield
+  File "/pkg/modal/_container_entrypoint.py", line 187, in run_input_sync
+    values = io_context.call_function_sync()
+  File "/pkg/modal/_runtime/container_io_manager.py", line 215, in call_function_sync
+    expected_value_or_values = self.finalized_function.callable(*args, **kwargs)
+  File "/root/modal_train_lora_real.py", line 278, in train_lora
+    model_pred = unet(
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/peft/peft_model.py", line 642, in forward
+    return self.get_base_model()(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/app/IDM-VTON/src/unet_hacked_tryon.py", line 1289, in forward
+    sample, res_samples,curr_garment_feat_idx = downsample_block(
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/app/IDM-VTON/src/unet_block_hacked_tryon.py", line 1176, in forward
+    hidden_states,curr_garment_feat_idx = attn(
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/app/IDM-VTON/src/transformerhacked_tryon.py", line 397, in forward
+    hidden_states,curr_garment_feat_idx = block(
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/app/IDM-VTON/src/attentionhacked_tryon.py", line 334, in forward
+    modify_norm_hidden_states = torch.cat([norm_hidden_states,garment_features[curr_garment_feat_idx]], dim=1)
+TypeError: 'NoneType' object is not subscriptable
+
+Stopping app - uncaught exception raised in remote container: TypeError("'NoneType' object is not subscriptable").
+Runner terminated.
+┌─ Error ─────────────────────────────────────────────────────────────────────┐
+│ 'NoneType' object is not subscriptable                                      │
+└─────────────────────────────────────────────────────────────────────────────┘

@@ -1,0 +1,104 @@
+MASK GENERATION REPORT
+================================================================================
+
+Total SKU folders processed: 19
+Masks generated successfully: 19
+Masks failed: 0
+
+GENERATED MASKS:
+--------------------------------------------------------------------------------
+
+MS2529-w30-LBU:
+  Person: MS2529-W30-LBL1.webp
+  Mask: MS2529-w30-LBU.png
+  Hip Y: 311
+
+MS2530-w30-GEY:
+  Person: 4_663b777d-030c-498e-a1ff-128bad21ad07.webp
+  Mask: MS2530-w30-GEY.png
+  Hip Y: 328
+
+MS2532-w28-BLK:
+  Person: 6_81fe208c-a179-4d5a-b26e-682087688d0b.webp
+  Mask: MS2532-w28-BLK.png
+  Hip Y: 329
+
+MS2535-00S-BRN:
+  Person: 1_ad268097-462b-4b30-a9db-0a409d3e4a4f.webp
+  Mask: MS2535-00S-BRN.png
+  Hip Y: 358
+
+MS2537-w30-SKB:
+  Person: 2_6e231cd3-c28a-4d6c-8a23-c77e90d0ee77.webp
+  Mask: MS2537-w30-SKB.png
+  Hip Y: 342
+
+MS2538-w30-BLU:
+  Person: 2_00bc7b67-5acf-4ff0-8e59-f49b5635c0ce.webp
+  Mask: MS2538-w30-BLU.png
+  Hip Y: 349
+
+MS2541-00S-SKY:
+  Person: 3_75696503-6f2e-447f-bf2a-f8ff69f9bdbd.webp
+  Mask: MS2541-00S-SKY.png
+  Hip Y: 353
+
+MS2542-00M-BEI:
+  Person: 4_5e3bb6c1-dd6d-474c-bd70-6b29f02f6ceb.webp
+  Mask: MS2542-00M-BEI.png
+  Hip Y: 354
+
+MS2601-00M-LGY:
+  Person: 6_990f445c-daee-4874-936d-ea24aefc24c9.webp
+  Mask: MS2601-00M-LGY.png
+  Hip Y: 356
+
+MS2603-w30-BLK:
+  Person: 1_13627819-b47c-4166-9c27-5bbab66132f3.webp
+  Mask: MS2603-w30-BLK.png
+  Hip Y: 443
+
+MS2605-w30-BLK:
+  Person: 1_cdfb020d-6564-41a5-803b-1bd7079608c7.webp
+  Mask: MS2605-w30-BLK.png
+  Hip Y: 377
+
+MS2607-w30-NVY:
+  Person: 3rdArticles10_0006_2N0A7562.webp
+  Mask: MS2607-w30-NVY.png
+  Hip Y: 356
+
+MS2610-w30-BLU:
+  Person: MS2610-BLU.webp
+  Mask: MS2610-w30-BLU.png
+  Hip Y: 283
+
+MS2613-w30-BLU:
+  Person: 1_5593e732-cdf8-4d1b-9cad-e17ff3519905.webp
+  Mask: MS2613-w30-BLU.png
+  Hip Y: 371
+
+MS2617-00S-SND:
+  Person: MS2617-SND.webp
+  Mask: MS2617-00S-SND.png
+  Hip Y: 327
+
+MS2618-00S-SLG:
+  Person: MS2618-SLG.webp
+  Mask: MS2618-00S-SLG.png
+  Hip Y: 315
+
+MS2624-BEI:
+  Person: 1_919d361d-b9eb-4f5f-8a0f-cf0f784f17c2.webp
+  Mask: MS2624-BEI.png
+  Hip Y: 326
+
+MS2627-w30-BLU:
+  Person: 1_4a348b5a-2f5d-4162-b43b-61ccef3aa35b.webp
+  Mask: MS2627-w30-BLU.png
+  Hip Y: 404
+
+MS2628-w30-BLK:
+  Person: 1_4b5d8215-8d51-49c2-b652-020825846b17.webp
+  Mask: MS2628-w30-BLK.png
+  Hip Y: 381
